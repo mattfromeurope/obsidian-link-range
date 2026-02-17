@@ -27,7 +27,7 @@ export default class LinkRange extends Plugin {
 		// wait for layout to be ready
 		this.app.workspace.onLayoutReady(() => {
 			this.registerEditorExtension(ViewPlugin.define((v) => {
-				return new LifePreviewEmbedReplacer(this.settings, this.app)
+				return new LifePreviewEmbedReplacer(v, this.settings, this.app)
 			}));
 
 			const ext = Prec.lowest(buildCMViewPlugin(this.app, this.settings));
